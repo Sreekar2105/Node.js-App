@@ -362,42 +362,42 @@
 /////////////////////////////////////////////////  HTML ROUTING  //////////////////////////////////////////////////////////////
 
 
-const http = require('node:http')
-const fs = require('node:fs');
+// const http = require('node:http')
+// const fs = require('node:fs');
 
 
-const html = fs.readFileSync('./index.html','utf-8');
+// const html = fs.readFileSync('./index.html','utf-8');
 
 
-const server = http.createServer((req,res)=> {
-    if(req.url === '/')
-    {
-        res.writeHead(200,{"Content-Type" : "text/plain"});
-        res.end('Welcome to Home Page...');
-    }
+// const server = http.createServer((req,res)=> {
+//     if(req.url === '/')
+//     {
+//         res.writeHead(200,{"Content-Type" : "text/plain"});
+//         res.end('Welcome to Home Page...');
+//     }
 
-    else if(req.url === '/about')
-    {
-        res.writeHead(200,{"Content-Type" : "text/plain"});
-        res.end('Welcome to About Page...');
-    }
+//     else if(req.url === '/about')
+//     {
+//         res.writeHead(200,{"Content-Type" : "text/plain"});
+//         res.end('Welcome to About Page...');
+//     }
 
-    else if(req.url === '/contact')
-    {
-        res.writeHead(200,{"Content-Type" : "text/plain"});
-        res.end('Welcome to Contact Page...');
-    }
+//     else if(req.url === '/contact')
+//     {
+//         res.writeHead(200,{"Content-Type" : "text/plain"});
+//         res.end('Welcome to Contact Page...');
+//     }
 
-    else
-    {
-        res.writeHead(400);
-        res.end("Page Not Found!!!")
-    }
- });
+//     else
+//     {
+//         res.writeHead(400);
+//         res.end("Page Not Found!!!")
+//     }
+//  });
 
-server.listen(3000,()=>{
-    console.log("Server running")
-});
+// server.listen(3000,()=>{
+//     console.log("Server running")
+// });
 
 
 
@@ -495,3 +495,22 @@ server.listen(3000,()=>{
 // }
 
 // greet("Sreekar")
+
+
+
+
+
+
+/////////////////////////////////////////////////  DEPLOYMENT  //////////////////////////////////////////////////////////////
+
+
+const http = require('node:http');
+
+const server = http.createServer((req,res) => {
+    res.writeHead(200, {"Content-Type" : "text/plain"});
+    res.end("Hello World");
+});
+
+server.listen(3000, ()=> {
+    console.log("Server is running");
+});
